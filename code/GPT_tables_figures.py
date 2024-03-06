@@ -559,39 +559,5 @@ pd_results_35 = pd.read_csv(
     os.path.join("..", "data", "gpt_prisoner_results.csv")
 )
 
-dg_results_4 = pd.read_csv(
-    os.path.join("..", "data", "GPT_dictator_game_simulation_results_GPT4.csv")
-)
-pd_results_4 = pd.read_csv(
-    os.path.join(
-        "..", "data", "GPT_prisoners_dilemma_simulation_results_GPT4.csv"
-    )
-)
-
-dg_results_4_v2 = pd.read_csv(
-    os.path.join(
-        "..", "data", "GPT_dictator_game_simulation_results_GPT4_Feb3.csv"
-    )
-)
-pd_results_4_v2 = pd.read_csv(
-    os.path.join(
-        "..", "data", "GPT_prisoners_dilemma_simulation_results_GPT4.csv"
-    )
-)
-
-dg_results_4_v3 = pd.read_csv(
-    os.path.join(
-        "..", "data", "GPT_dictator_game_simulation_results_GPT4_Feb3.csv"
-    )
-)
-pd_results_4_v3 = pd.read_csv(
-    os.path.join(
-        "..", "data", "GPT_prisoners_dilemma_simulation_results_GPT4.csv"
-    )
-)
-
 # Call function to produce tables and figures
 produce_tables_figures(dg_results_35, pd_results_35, "GPT-3.5")
-produce_tables_figures(dg_results_4, pd_results_4, "GPT-4")
-produce_tables_figures(dg_results_4_v2, pd_results_4_v2, "GPT-4-v2")
-produce_tables_figures(dg_results_4_v3, pd_results_4_v3, "GPT-4-v2-temp1pt5")
