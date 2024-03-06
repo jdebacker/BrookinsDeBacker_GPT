@@ -1,5 +1,5 @@
 # imports
-import openai  # Chatgpt model
+from openai import OpenAI
 import pandas as pd
 import pickle
 import os
@@ -11,7 +11,7 @@ gpt-3.5-turbo in the prisoners dilemma game.
 """
 
 # Set OpenAI API key
-openai.api_key = "PUT YOUR KEY HERE"
+client = OpenAI(api_key="PUT YOUR KEY HERE")  # Chatgpt model
 # define file name (a string, path and extension set below)
 DATA_FILENAME = "GPT_prisoners_dilemma_simulation_results"
 # Set number of observations to get from GPT-3.5 per parameterization
@@ -178,7 +178,7 @@ for j in range(num_parameterizations):
     d = pd_parameterizations["d"][j]
     pd_instructions = prisoners_dilemma_instructions(a, b, c, d)
     for i in range(num_obs):
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             temperature=1.0,
             messages=[
@@ -204,8 +204,15 @@ for j in range(num_parameterizations):
 
 # Put results in DataFrame
 df = pd.DataFrame(
-    list(zip(obs_number, model_answer, model_response, model_parameterization)),
-    columns=["obs_number", "model_answer", "model_response", "model_parameterization"],
+    list(
+        zip(obs_number, model_answer, model_response, model_parameterization)
+    ),
+    columns=[
+        "obs_number",
+        "model_answer",
+        "model_response",
+        "model_parameterization",
+    ],
 )
 # Save results to disk as CSV and DataFrame via pickle
 df.to_csv(os.path.join("..", "data", DATA_FILENAME + ".csv"))
