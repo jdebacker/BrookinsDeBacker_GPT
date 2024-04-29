@@ -1,5 +1,5 @@
 # Brookins and DeBacker, "Playing games with GPT: What can we learn about a large language model from canonical strategic games?"
-## Replication files for [Brookins and DeBacker (2023)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4493398)
+## Replication files for [Brookins and DeBacker (*Economics Bulletin*, 2024)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4493398)
 
 ## Abstract:
 We aim to understand fundamental preferences over fairness and cooperation embedded in artificial intelligence (AI). We do this by having a large language model (LLM), GPT-3.5, play two classic games: the dictator game and the prisoner's dilemma. We compare the decisions of the LLM to those of humans in laboratory experiments. We find that the LLM replicates human tendencies towards fairness and cooperation. It does not choose the optimal strategy in most cases. Rather, it shows a tendency towards fairness in the dictator game, even more so than human participants. In the prisoner's dilemma, the LLM displays rates of cooperation much higher than human participants (about 65% versus 37% for humans). These findings aid our understanding of the ethics and rationality embedded in AI.
